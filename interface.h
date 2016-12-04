@@ -1,12 +1,15 @@
 #ifndef __INTERFACE_H__
 #define __INTERFACE_H__
+#include <string>
+#include <vector>
+using namespace std;
 
 struct Node {
     string spotName;
     string location;
     string phoneNumber;
-    Node(string _spotName, string _location, string _phoneNumber) : spotName(_spotName),
-     location(_location), phoneNumber(_phoneNumber)) {}
+    Node(string _spotName, string _location, string _phoneNumber) : 
+         spotName(_spotName), location(_location), phoneNumber(_phoneNumber) {}
 };
 
 class Graph {
@@ -16,7 +19,7 @@ public:
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: querry the scenery spot by its name;
     */
-    Node querrySpot( string spotName );
+    Node* querrySpot( string spotName );
 
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
