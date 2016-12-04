@@ -5,7 +5,6 @@ struct Node {
     string spotName;
     string location;
     string phoneNumber;
-    // vector<int, int> neighbor; // vector<int index, int distance>
     Node(string _spotName, string _location, string _phoneNumber) : spotName(_spotName),
      location(_location), phoneNumber(_phoneNumber)) {}
 };
@@ -50,6 +49,4 @@ public:
     vector<Node> _spot;
     int _adjacency[20][20];
 };
-
-
 #endif
