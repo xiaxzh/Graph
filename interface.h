@@ -14,7 +14,7 @@ struct Node {
 
 class Graph {
 public:
-    Graph( FILE* filePath );
+    Graph(const string& filename);
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: querry the scenery spot by its name;
@@ -51,5 +51,6 @@ public:
 
     vector<Node> _spot;
     int _adjacency[20][20];
+    int count = 10;
 };
 #endif
