@@ -19,7 +19,7 @@ public:
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: querry the scenery spot by its name;
     */
-    Node* querrySpot(const string& spotName );
+    Node* querySpot(const string& spotName );
 
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
