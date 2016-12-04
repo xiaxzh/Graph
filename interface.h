@@ -11,40 +11,40 @@ struct Node {
 
 class Graph {
 public:
-    Graph(FILE* filePath);
+    Graph( FILE* filePath );
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: querry the scenery spot by its name;
     */
-    Node querrySpot(string spotName);
+    Node querrySpot( string spotName );
 
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: find the shortest path using Dijkstra's algorithm; return a vector containing the spots and the distance on the way;
-    ** vector<string spotName, int distance>
+    ** vector< pair<spotName, distance> >, while spotName is a string, distance is an integer
     */
-    vector<string, int> findPath(string startSpot, string endSpot);
+    vector< pair<string, int> > findPath( string startSpot, string endSpot );
 
     /*
     ** Post: if the spot exists, return true; Otherwise, return false;
     */
-    bool spotExist(string spotName);
+    bool spotExist( string spotName );
 
     /*
     ** Post: print the info of spot;
     */
-    void showSpot(Node spot);
+    void showSpot( Node spot );
 
     /*
     ** Post: print the scenery spots and the distance on the way;
     */
-    void showPath(vector<string, int> path);
+    void showPath( vector< pair<string, int> > path );
 
     /*
     ** Pre: the name of scenery spot should exist; if not, enter a loop until the name exists;
     ** Post: map the name of scenery spot into serial number
     */
-    int getIndex(string spotName);
+    int getIndex( string spotName );
 
     vector<Node> _spot;
     int _adjacency[20][20];
