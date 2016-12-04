@@ -9,7 +9,7 @@ Graph::Graph(const string& filename) {
     int origin = 0, target = 0, distance = 0;
     for (int i = 0; i < 20; ++i)
         for (int j = 0; j < 20; ++j)
-            _adjacency[i][j] = -1;
+            _adjacency[i][j] = 10000;
     while (m--) {
         in >> origin >> target >> distance;
         _adjacency[origin][target] = distance;
