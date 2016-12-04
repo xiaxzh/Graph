@@ -48,6 +48,7 @@ public:
     ** Post: map the name of scenery spot into serial number
     */
     int getIndex(const string& spotName );
+    string getSpotName(int index);
 
     vector<Node> _spot;
     int _adjacency[20][20];
