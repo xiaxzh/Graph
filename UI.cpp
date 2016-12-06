@@ -46,7 +46,7 @@ void UI::showAllSpot() {
     printf("Show All Spot:\n");
     printf("--------------------------------------\n");
     for (int i = 0; i < m_graph._spot.size(); i++) {
-        printf("%d.\t%s\n", i, m_graph._spot[i].spotName);
+        printf("%d.\t%s\n", i, m_graph._spot[i].spotName.c_str());
     }
     printf("--------------------------------------\n");
 }

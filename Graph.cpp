@@ -30,7 +30,7 @@ Graph::Graph(const string& filename) {
 
 int Graph::getIndex(const string& spotName) {
     for (int i = 0; i < count; ++i) {
-        if (_spot[i]._spotName == spotName) {
+        if (_spot[i].spotName == spotName) {
             return i;
         }
     }
