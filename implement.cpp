@@ -3,6 +3,7 @@
 #include "interface.h"
 #include <iostream>
 #include <sstream>
+#include <stdio.h>
 #include <string>
 
 Node* Graph::querySpot(const string& spotName) {
@@ -59,7 +60,7 @@ vector<pair<string, int> > Graph::findPath(const string& startSpot, const string
     path[end] += ss.str();
 
     vector<pair<string, int> > ret;
-    for (int i = 0; i < path[end].size() - 2; ++i)
+    for (unsigned i = 0; i < path[end].size() - 2; ++i)
         if (path[end][i] == ' ')  continue;
         else {
             int current = path[end][i]-'0';
@@ -69,5 +70,35 @@ vector<pair<string, int> > Graph::findPath(const string& startSpot, const string
     ret.push_back(make_pair(getSpotName(end), 0));
     return ret;
 }
+
+bool Graph::spotExist(const string& spotName) {
+    for (int i = 0; i < count; i++) {
+        if (_spot[i].spotName == spotName) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Graph::showSpot(const Node & spot) {
+    printf("Info:\n");
+    printf("--------------------------------------\n");
+    printf("名称：\t%s\n", spot.spotName.c_str());
+    printf("地点：\tj%s\n", spot.location.c_str());
+    printf("电话：\t%s\n", spot.phoneNumber.c_str());
+}
+
+void Graph::showPath(vector<pair<string, int> > path) {
+    printf("Path:\n");
+    printf("--------------------------------------\n");
+    for (unsigned i = 0; i < path.size() - 1; i++) {
+        printf("%s--", path[i].first.c_str());
+        printf("%4d--", path[i].second);
+        if (i % 3 == 2)
+            printf("\n");
+    }
+    printf("%s\n", path[path.size() - 1].first.c_str());
+}
+
 
 #endif
