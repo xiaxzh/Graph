@@ -1,5 +1,6 @@
 #include "interface.h"
 #include <iostream>
+#include <string>
 #include <fstream>
 
 Graph::Graph(const string& filename) {
@@ -34,4 +35,8 @@ int Graph::getIndex(const string& spotName) {
         }
     }
     return -1;
+}
+
+string Graph::getSpotName(int index) {
+    return _spot[index].spotName;
 }
