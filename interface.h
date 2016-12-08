@@ -48,9 +48,10 @@ public:
     ** Post: map the name of scenery spot into serial number
     */
     int getIndex(const string& spotName );
+    void change2drive();
+    void change2walk();
     string getSpotName(int index);
 
-protected:
     vector<Node> _spot;
     int _adjacency[20][20];
     int count = 10;

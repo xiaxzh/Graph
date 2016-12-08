@@ -11,6 +11,7 @@ Node* Graph::querySpot(const string& spotName) {
         if (i.spotName == spotName) {
             return &i;
         }
+    return nullptr;
 }
 
 vector<pair<string, int> > Graph::findPath(const string& startSpot, const string& endSpot) {
