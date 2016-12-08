@@ -9,7 +9,6 @@
 Node* Graph::querySpot(const string& spotName) {
     for (auto &i : _spot)
         if (i.spotName == spotName) {
-            cout << &i << endl;
             return &i;
         }
 }
@@ -43,12 +42,9 @@ vector<pair<string, int> > Graph::findPath(const string& startSpot, const string
                 min = distance[w];
             }
         found[v] = true;
-        cout << "Next shortest : " << v << endl;
         for (w = 0; w < count; ++w)
             if (!found[w] && _adjacency[v][w] != 10000 && min + _adjacency[v][w] < distance[w]) {
                 distance[w] = min + _adjacency[v][w];
-                cout << "update : " << w << endl;
-                cout << "distance from " << source << "to " << w << "is " << distance[w] << endl;
                 stringstream ss;
                 ss << v << ' ';
                 path[w] = path[v] + ss.str();
@@ -83,9 +79,9 @@ bool Graph::spotExist(const string& spotName) {
 void Graph::showSpot(const Node & spot) {
     printf("Info:\n");
     printf("--------------------------------------\n");
-    printf("名称：\t%s\n", spot.spotName.c_str());
-    printf("地点：\tj%s\n", spot.location.c_str());
-    printf("电话：\t%s\n", spot.phoneNumber.c_str());
+    printf("SpontName: \t%s\n", spot.spotName.c_str());
+    printf("Location: \t%s\n", spot.location.c_str());
+    printf("PhoneNumber: \t%s\n",  spot.phoneNumber.c_str());
 }
 
 void Graph::showPath(vector<pair<string, int> > path) {
@@ -93,7 +89,7 @@ void Graph::showPath(vector<pair<string, int> > path) {
     printf("--------------------------------------\n");
     for (unsigned i = 0; i < path.size() - 1; i++) {
         printf("%s--", path[i].first.c_str());
-        printf("%4d--", path[i].second);
+        printf("%04d--", path[i].second);
         if (i % 3 == 2)
             printf("\n");
     }
