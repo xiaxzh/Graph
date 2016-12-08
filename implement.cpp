@@ -89,8 +89,8 @@ void Graph::showPath(vector<pair<string, int> > path) {
     printf("Path:\n");
     printf("--------------------------------------\n");
     for (unsigned i = 0; i < path.size() - 1; i++) {
-        printf("%s--", path[i].first.c_str());
-        printf("%04d--", path[i].second);
+        printf("%-14s--", path[i].first.c_str());
+        printf("%-3d--", path[i].second);
         if (i % 3 == 2)
             printf("\n");
     }

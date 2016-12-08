@@ -75,7 +75,6 @@ void UI::findPath() {
     printf("[input] # ");
     string endSpot;
     std::cin >> endSpot;
-    printf("haha\n");
     while (!m_graph.spotExist(endSpot)) {
         printf("[error] Wrong input, the spot doesn't exist. Please input again.\n");
         printf("[input] # ");
