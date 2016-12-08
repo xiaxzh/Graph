@@ -34,6 +34,9 @@ string Graph::getSpotName(int index) {
 }
 void Graph::change2walk() {
     ifstream in("walk", ios::in);
+    for (int i = 0; i < 20; ++i)
+        for (int j = 0; j < 20; ++j)
+            _adjacency[i][j] = 10000;
     int origin = 0, target = 0, distance = 0;
     int n = 0, m = 0;
     in >> n >> m;
@@ -48,6 +51,9 @@ void Graph::change2drive() {
     ifstream in("drive", ios::in);
     int origin = 0, target = 0, distance = 0;
     int n = 0, m = 0;
+    for (int i = 0; i < 20; ++i)
+        for (int j = 0; j < 20; ++j)
+            _adjacency[i][j] = 10000;
     in >> n >> m;
     while (m--) {
         in >> origin >> target >> distance;

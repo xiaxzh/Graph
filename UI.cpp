@@ -19,7 +19,7 @@ void UI::startUI() {
 }
 
 void UI::select() {
-    printf("[input] # ");
+    printf("[inputMenu] # ");
     string tempInput;
     cin >> tempInput;
     switch (tempInput[0])
@@ -75,12 +75,28 @@ void UI::findPath() {
     printf("[input] # ");
     string endSpot;
     std::cin >> endSpot;
+    printf("haha\n");
     while (!m_graph.spotExist(endSpot)) {
         printf("[error] Wrong input, the spot doesn't exist. Please input again.\n");
         printf("[input] # ");
         std::cin >> endSpot;
     }
 
+    printf("[findpath] please input the vehicle you use.\n");
+    printf("1.On foot.\n");
+    printf("2.By car.\n");
+    printf("[input] # ");
+    string vehicle;
+    std::cin >> vehicle;
+    while (vehicle[0] != '2' && vehicle[0] != '1') {
+        printf("[error] Wrong input, please input '1' or '2'.\n");
+        std::cin >> vehicle;
+    }
+    if (vehicle[0] == '1')
+        m_graph.change2walk();
+    else if (vehicle[0] == '2')
+        m_graph.change2drive();
+   
     m_graph.showPath(m_graph.findPath(firSpot, endSpot));
 
 }
