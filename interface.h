@@ -50,6 +50,7 @@ public:
     int getIndex(const string& spotName );
     string getSpotName(int index);
 
+protected:
     vector<Node> _spot;
     int _adjacency[20][20];
     int count = 10;
